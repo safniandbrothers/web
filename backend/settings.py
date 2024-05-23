@@ -15,7 +15,7 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-ALLOWED_HOSTS = ['iebcampus-f2f71bef1783.herokuapp.com','*']
+ALLOWED_HOSTS = ['sbrothers-79fd9f3e7d62.herokuapp.com','*']
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
@@ -129,7 +129,7 @@ MEDIA_ROOT = BASE_DIR / 'static/images'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://iebcampus-f2f71bef1783.herokuapp.com',
+    'https://sbrothers-79fd9f3e7d62.herokuapp.com',
     'http://localhost'
 ]
 
