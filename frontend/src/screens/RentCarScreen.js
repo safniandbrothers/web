@@ -14,13 +14,13 @@ const RentCarScreen = () => {
     let [date, setDate] = useState(parseAbsoluteToLocal("2021-04-07T18:45:22Z"));
   return (
     <div className='h-fit w-full flex flex-col gap-8'>
-        <section className='h-fit w-full relative'>
+        <section className='h-fit w-full relative flex lg:justify-end'>
             <div className='h-[500px] w-full absolute z-0'>
                 <img src={rcp} alt='' className='h-full w-full object-cover' />
             </div>
-            <div className='h-fit w-full max-w-[1024px] mx-auto flex flex-col px-8 relative z-30 pt-[300px]'>
+            <div className='h-fit w-full max-w-[1024px] mx-auto flex flex-col px-8 relative z-30 pt-[300px] lg:pt-[110px] lg:ml-auto'>
                 
-                <div className='w-full min-w-full flex flex-col gap-4 px-6 py-8 bg-transparent backdrop-blur-md rounded-[16px] border-[2px] border-white/25'>
+                <div className='w-full lg:max-w-[400px] min-w-full lg:min-w-[400px] flex flex-col gap-4 px-6 py-8 bg-transparent backdrop-blur-md rounded-[16px] border-[2px] border-white/25'>
                     <div className='w-full'>
                         <p className='text-2xl font-bold text-white'>Rent car</p>
                     </div>
