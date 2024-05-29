@@ -1,7 +1,11 @@
 import React from 'react'
 import hbg from '../assets/HBG.png'
-import stikS from '../assets/stickS.png'
-import stikG from '../assets/stickG.png'
+
+import GC from '../assets/GoldCoin.png'
+
+import RCG from '../assets/RentaCar.png'
+import SC from '../assets/SilverCoin.png'
+import RCS from '../assets/RentaCarSilver.png'
 
 import { Button } from '@nextui-org/react'
 import { Link } from 'react-router-dom'
@@ -28,33 +32,7 @@ const HomeScreen = () => {
             <div className='h-[500px] w-full absolute z-0 opacity-35'>
                 <img src={hbg} alt='' className='h-full w-full object-cover' />
             </div>
-            <div className='h-full w-full flex flex-col gap-4 items-center justify-center  px-8 relative z-30'>
-                <div className='flex gap-2 justify-center lg:mt-8'>
-                    <Link to={'/destribution'} className='h-[200px] w-[200px] relative  rounded-full'>
-                    <Swiper
-                        effect={'flip'}
-                        grabCursor={true}
-                        autoplay={{
-                            delay: 2000,
-                            disableOnInteraction: false,
-                        }}
-                        modules={[EffectFlip, Autoplay]}
-                        
-                    >
-                        <SwiperSlide>
-                            <img src={stikG} />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <img src={stikS} />
-                        </SwiperSlide>
-                    </Swiper>
-                    </Link>
-                    {/* <Link to={'/rent-car'}>
-                        <Button variant='bordered' className='h-fit capitalize border-[2px] font-medium border-[#4093f1] bg-[#4093f1] text-xs md:text-sm text-black px-4 md:px-5 py-2 md:py-3 rounded-full'>
-                            Rent car
-                        </Button>
-                    </Link> */}
-                </div>
+            <div className='h-full w-full flex flex-col gap-8 items-center justify-center  mt-[50px] px-8 relative z-30'>
                 <div className='flex flex-col gap-2'>
                     <div className='flex flex-col text-center'>
                         <p className='text-xl font-semibold text-white capitalize'>Welcome to</p>
@@ -64,7 +42,51 @@ const HomeScreen = () => {
                     </div>
                     {/* <p className='text-sm text-white/50 text-center'>A simple declarative syntax means you write less code. Less code means your codebase is easier to read and maintain.</p> */}
                 </div>
-                <div className='flex gap-4'>
+                <div className='flex justify-center gap-8'>
+                    <Link to={'/destribution'} className='h-[125px] w-[125px] relative  rounded-full'>
+                        <Swiper
+                            effect={'flip'}
+                            grabCursor={true}
+                            autoplay={{
+                                delay: 2000,
+                                disableOnInteraction: false,
+                            }}
+                            modules={[EffectFlip, Autoplay]}
+                        >
+                            <SwiperSlide>
+                                <img src={GC} />
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <img src={SC} />
+                            </SwiperSlide>
+                        </Swiper>
+                    </Link>
+                    <Link to={'/rent-car'} className='h-[125px] w-[125px] relative  rounded-full'>
+                        <Swiper
+                            effect={'flip'}
+                            grabCursor={true}
+                            autoplay={{
+                                delay: 2000,
+                                disableOnInteraction: false,
+                            }}
+                            modules={[EffectFlip, Autoplay]}
+                        >
+                           
+                            <SwiperSlide>
+                                <img src={RCS} />
+                            </SwiperSlide>
+                             <SwiperSlide>
+                                <img src={RCG} />
+                            </SwiperSlide>
+                        </Swiper>
+                    </Link>
+                    {/* <Link to={'/rent-car'}>
+                        <Button variant='bordered' className='h-fit capitalize border-[2px] font-medium border-[#4093f1] bg-[#4093f1] text-xs md:text-sm text-black px-4 md:px-5 py-2 md:py-3 rounded-full'>
+                            Rent car
+                        </Button>
+                    </Link> */}
+                </div>
+                <div className='flex gap-4 '>
                     <Button className='border-[2px] border-white/25' variant='bordered'>
                         <IoLogoFacebook className='text-white text-2xl' />
                         <p className='text-white capitalize'>facebook</p>
@@ -77,11 +99,7 @@ const HomeScreen = () => {
                 </div>
             </div>
         </section>
-        <section className='h-fit w-full bg-gray-900 py-16'>
-            <div className='h-fit w-full max-w-[1024px] mx-auto px-8 flex flex-col sm:flex-row justify-center gap-4'>
-                
-            </div>
-        </section>
+        
     </div>
   )
 }
