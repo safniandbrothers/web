@@ -9,61 +9,167 @@ import {parseZonedDateTime} from "@internationalized/date";
 import rcp from '../assets/rcp.png'
 import { Link } from 'react-router-dom';
 import {Tabs, Tab, Card, CardBody, CardHeader} from "@nextui-org/react";
+import { FaCar } from "react-icons/fa";
+import {Select, SelectItem} from "@nextui-org/react";
+import {DateRangePicker} from "@nextui-org/react";
 
 const RentCarScreen = () => {
     let [date, setDate] = useState(parseAbsoluteToLocal("2021-04-07T18:45:22Z"));
+    const [selected, setSelected] = React.useState("login");
+
   return (
-    <div className='h-fit w-full flex flex-col gap-8'>
-        <section className='h-fit w-full relative flex lg:justify-end'>
-            <div className='h-[500px] w-full absolute z-0'>
-                <img src={rcp} alt='' className='h-full w-full object-cover' />
-            </div>
-            <div className='h-fit w-full max-w-[1024px] mx-auto flex flex-col px-8 relative z-30 pt-[300px] lg:pt-[110px] lg:ml-auto'>
-                
-                <div className='w-full lg:max-w-[400px] min-w-full lg:min-w-[400px] flex flex-col gap-4 px-6 py-8 bg-transparent backdrop-blur-md rounded-[16px] border-[2px] border-white/25'>
-                    <div className='w-full'>
-                        <p className='text-2xl font-bold text-white'>Rent car</p>
-                    </div>
-                    <div className='flex items-start gap-4'>
-                        <div className='p-2 rounded-full border-[2px] border-white border-opacity-50'>
-                            <HiOutlineMail  className='text-2xl text-white opacity-50' />
-                        </div>
-                        <Input type="email" variant='flat' label="Email" className='text-white' style={{
-                                color:'white'
-                            }} placeholder="Enter your email" />
-                    </div>
-
-                    <div className='flex items-start gap-4'>
-                        <div className='p-2 rounded-full border-[2px] border-white border-opacity-50'>
-                            <IoLocationSharp className='text-2xl text-white opacity-50' />
-                        </div>
-                        <Input type="text" variant='flat' label="Pickup & Drop" placeholder="Enter address" />
-                    </div>
-
-                    <div className='flex items-start gap-4'>
-                        <DateInput
-                            label="Appointment time"
+    <div className='h-screen min-h-fit w-full flex flex-col gap-8 bg-black pt-28 justify-center'>
+        <section className='h-fit w-full '>
+            <div className='h-fit w-full max-w-[1024px] mx-auto px-8'>
+                <div className='p-8 rounded-[16px]'>
+                    <Tabs aria-label="Options" 
+                        classNames={{
+                            tabList: "gap-6 w-full relative rounded-none p-0 border-b border-divider px-2 rounded-[12px] py-2 mx-1 bg-gray-500",
+                            cursor: "w-full group-data-[selected=true]:bg-[#181715]",
+                            tab: "py-2 px-4 rounded-[6px] ",
+                            tabContent: "group-data-[selected=true]:text-white text-black group-data-[selected=true]:bg-[#181715]"
+                        }}
+                       >
+                        <Tab key="Self drive" title={
+                            <div className='flex flex-row gap-2 items-center'>
+                                <FaCar/>
+                                <p>Self drive</p>
+                            </div>
+                        }  className='bg-transparent flex flex-col gap-4'>
+                            <Select 
+                                label="PICKUP/RETURN LOCATION" 
+                                className="max-w-md" 
+                                size='md'
+                                variant='faded'
+                                // classNames={{
+                                //     label: "group-data-[filled=true]:-translate-y-5 text-white",
+                                //     trigger: "min-h-16 bg-black hover:bg-black",
+                                //     listboxWrapper: "max-h-[400px] ",
+                                // }}
+                                // // popoverProps={{
+                                // //     classNames: {
+                                // //         base: "before:bg-black bg-black rounded-[12px]",
+                                // //         content: "p-0 border-small border-divider bg-black rounded-[12px]",
+                                // //     },
+                                // //     }}
+                            >
+                                <SelectItem key='hi' className=''>
+                                    Casons Head Office
+                                </SelectItem>
+                                <SelectItem key='hi' className=''>
+                                    BIA airport
+                                </SelectItem>
+                            </Select>
+                            <DateRangePicker label="Duration" className="max-w-md" 
+                            variant=''
                             hideTimeZone
-                            defaultValue={parseZonedDateTime("2022-11-07T00:45[America/Los_Angeles]")}
-                        />
-                    </div>
-                    <Link to={'/rent-car'}>
-                        <Button variant='bordered' className='h-fit w-fit capitalize border-[2px] font-medium border-[#4093f1] bg-[#4093f1] text-xs md:text-sm text-white px-5 py-3 rounded-full'>
-                            Rent car
-                        </Button>
-                    </Link>
-                    
+                            visibleMonths={2}
+                           
+                            defaultValue={{
+                                start: parseZonedDateTime("2024-04-01T00:45[America/Los_Angeles]"),
+                                end: parseZonedDateTime("2024-04-08T11:15[America/Los_Angeles]"),
+                            }}
+                            />
+                            <Select 
+                                label="VEHICLE TYPE" 
+                                className="max-w-md" 
+                                size='md'
+                                variant='faded'
+                                // classNames={{
+                                //     label: "group-data-[filled=true]:-translate-y-5 text-white",
+                                //     trigger: "min-h-16 bg-black hover:bg-black",
+                                //     listboxWrapper: "max-h-[400px] ",
+                                // }}
+                                // // popoverProps={{
+                                // //     classNames: {
+                                // //         base: "before:bg-black bg-black rounded-[12px]",
+                                // //         content: "p-0 border-small border-divider bg-black rounded-[12px]",
+                                // //     },
+                                // //     }}
+                            >
+                                <SelectItem key='All' className=''>
+                                    All
+                                </SelectItem>
+                                <SelectItem key='Cars' className=''>
+                                    Cars
+                                </SelectItem>
+                                <SelectItem key='Vans' className=''>
+                                    Vans
+                                </SelectItem>
+                            </Select>
+                        </Tab>
+                        <Tab key="With driver" title={
+                            <div className='flex flex-row gap-2 items-center'>
+                                <FaCar/>
+                                <p>With driver</p>
+                            </div>
+                        } className='bg-transparent flex flex-col gap-4'>
+                            <Select 
+                                label="PICKUP/RETURN LOCATION" 
+                                className="max-w-md" 
+                                size='md'
+                                variant='faded'
+                                // classNames={{
+                                //     label: "group-data-[filled=true]:-translate-y-5 text-white",
+                                //     trigger: "min-h-16 bg-black hover:bg-black",
+                                //     listboxWrapper: "max-h-[400px] ",
+                                // }}
+                                // // popoverProps={{
+                                // //     classNames: {
+                                // //         base: "before:bg-black bg-black rounded-[12px]",
+                                // //         content: "p-0 border-small border-divider bg-black rounded-[12px]",
+                                // //     },
+                                // //     }}
+                            >
+                                <SelectItem key='hi' className=''>
+                                    Casons Head Office
+                                </SelectItem>
+                                <SelectItem key='hi' className=''>
+                                    BIA airport
+                                </SelectItem>
+                            </Select>
+                            <DateRangePicker label="Duration" className="max-w-md" 
+                            variant=''
+                            hideTimeZone
+                            visibleMonths={2}
+                           
+                            defaultValue={{
+                                start: parseZonedDateTime("2024-04-01T00:45[America/Los_Angeles]"),
+                                end: parseZonedDateTime("2024-04-08T11:15[America/Los_Angeles]"),
+                            }}
+                            />
+                            <Select 
+                                label="VEHICLE TYPE" 
+                                className="max-w-md" 
+                                size='md'
+                                variant='faded'
+                                // classNames={{
+                                //     label: "group-data-[filled=true]:-translate-y-5 text-white",
+                                //     trigger: "min-h-16 bg-black hover:bg-black",
+                                //     listboxWrapper: "max-h-[400px] ",
+                                // }}
+                                // // popoverProps={{
+                                // //     classNames: {
+                                // //         base: "before:bg-black bg-black rounded-[12px]",
+                                // //         content: "p-0 border-small border-divider bg-black rounded-[12px]",
+                                // //     },
+                                // //     }}
+                            >
+                                <SelectItem key='All' className=''>
+                                    All
+                                </SelectItem>
+                                <SelectItem key='Cars' className=''>
+                                    Cars
+                                </SelectItem>
+                                <SelectItem key='Vans' className=''>
+                                    Vans
+                                </SelectItem>
+                            </Select>
+                        </Tab>
+                    </Tabs>
                 </div>
             </div>
-        </section>      
-        <section className=''>
-            <div className='h-fit w-full lg:w-1/2 max-w-[1024px] mx-auto flex flex-col gap-4 px-8 relative z-30'>
-                <p className='text-2xl font-bold text-white'>Our Services</p>
-                <div className='py-8 px-6 border-[2px] border-white/20 rounded-[24px] flex flex-col items-start gap-4 backdrop-blur-md'>
-                    <p className='text-white text-sm text-justify'>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual.</p>
-                </div>              
-            </div>
-        </section>  
+        </section>
     </div>
   )
 }

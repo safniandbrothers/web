@@ -12,40 +12,37 @@ import { IoMail } from "react-icons/io5";
 
 const Footer = () => {
   return (
-    <footer className='h-fit w-full bg-blue-400 py-20'>
-      <div className='h-fit w-full max-w-[1024px] mx-auto flex flex-col md:flex-row md:justify-between gap-8  px-8'>
-        <div className='w-full max-w-[400px] px-8 md:px-0 md:w-[300px] flex flex-col items-center md:text-start mx-auto gap-4'>
-          <div className=' w-full flex items-center justify-center lg:justify-start rounded-[8px] mb-4 py-8'>
+    <footer className='h-fit w-full bg-blue-400 py-2mt-4'>
+      <div className='h-fit w-full max-w-[1024px] mx-auto flex flex-col md:flex-row md:justify-between px-8'>
+        <div className='w-full px-8 md:px-0 flex flex-row items-center md:text-start mx-auto gap-2'>
+          {/* <div className=' w-full flex items-center justify-center lg:justify-start rounded-[8px] mb-4 py-8'>
             <img src={logo1} alt='' className='h-[100px] w-fit object-contain mx-auto' />
-          </div>        
+          </div>         */}
           {/* <p className='text-2xl font-bold text-white uppercase text-center lg:text-left'>ISAFNY & BROTHERS <span className='text-sm'>(PVT) Ltd</span></p> */}
-          <div className='h-[1px] w-full bg-white/25'></div>
-          <div className='flex flex-col gap-2 w-full items-center'>
-            <div className='flex items-center gap-2'>
-              <FaLocationDot  className='text-white'/>
-              <p className='text-center lg:text-left text-sm text-white/75 font-medium'> 98 Broadway Road, Akkaraipattu - 01</p>
+            <div className='flex flex-row gap-8 w-full items-center justify-center'>
+              <div className='flex items-center gap-2'>
+                <FaLocationDot  className='text-white'/>
+                <p className='text-center lg:text-left text-sm text-white/75 font-medium'> 98 Broadway Road, Akkaraipattu - 01</p>
+              </div>
+              <div className='flex items-center gap-2'>
+                <IoCall  className='text-white'/>
+                <p className='text-center lg:text-left text-sm text-white/75'>0777926383 </p>
+              </div>
+              <div className='flex items-center gap-2'>
+                <IoMail  className='text-white'/>
+                <p className='text-center lg:text-left text-sm text-white/75'>safnyandbrotherspvt@gmail.com </p>
+              </div>
             </div>
-            <div className='flex items-center gap-2'>
-              <IoCall  className='text-white'/>
-              <p className='text-center lg:text-left text-sm text-white/75'>0777926383 </p>
+            <div className='w-fit py-4 flex items-center justify-center'>
+              <Button isIconOnly startContent={<RiInstagramFill className='text-2xl text-white'/>} variant='light'>
+              </Button>
+              <Button isIconOnly startContent={<FaFacebook  className='text-2xl text-white'/>} variant='light'>
+
+              </Button>
+              <Button isIconOnly startContent={<FaLinkedin  className='text-2xl text-white'/>} variant='light'>
+
+              </Button>
             </div>
-            <div className='flex items-center gap-2'>
-              <IoMail  className='text-white'/>
-              <p className='text-center lg:text-left text-sm text-white/75'>safnyandbrotherspvt@gmail.com </p>
-            </div>
-          </div>
-          <div className='h-[1px] w-full bg-white/25'></div>
-          <div className='w-full py-4 flex items-center justify-center'>
-            <Button isIconOnly startContent={<RiInstagramFill className='text-2xl text-white'/>} variant='light'>
-
-            </Button>
-            <Button isIconOnly startContent={<FaFacebook  className='text-2xl text-white'/>} variant='light'>
-
-            </Button>
-            <Button isIconOnly startContent={<FaLinkedin  className='text-2xl text-white'/>} variant='light'>
-
-            </Button>
-          </div>
         </div>
 
         {/* <div className='w-full max-w-[500px] grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-12'>
