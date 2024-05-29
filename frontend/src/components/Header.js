@@ -1,6 +1,7 @@
 import React from 'react'
 import {Navbar, NavbarBrand, NavbarContent, NavbarItem, Button} from "@nextui-org/react";
 import logo from '../assets/logo.png'
+import logo1 from '../assets/logo1.png'
 import { Link } from 'react-router-dom';
 
 const Header = () => {

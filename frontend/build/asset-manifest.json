@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.e4047e2b.css",
-    "main.js": "/static/js/main.4e96187b.js",
+    "main.css": "/static/css/main.4f6e2dcd.css",
+    "main.js": "/static/js/main.5f0ed38d.js",
     "static/js/453.8ab44547.chunk.js": "/static/js/453.8ab44547.chunk.js",
     "static/media/HBG.png": "/static/media/HBG.5cba3f61e56ab5d37cc2.png",
     "static/media/rcp.png": "/static/media/rcp.eb46aa98a893070762c7.png",
@@ -10,14 +10,15 @@
     "static/media/GoldCoin.png": "/static/media/GoldCoin.a8b1cfdd45aa97dd07ab.png",
     "static/media/RentaCarSilver.png": "/static/media/RentaCarSilver.8f710dc0ea122ec9f6c0.png",
     "static/media/SilverCoin.png": "/static/media/SilverCoin.83627f5149be6664b06b.png",
+    "static/media/logo1.png": "/static/media/logo1.d01269c4f40c10ba5050.png",
     "static/media/logo.png": "/static/media/logo.cb0006539b5f41efba22.png",
     "index.html": "/index.html",
-    "main.e4047e2b.css.map": "/static/css/main.e4047e2b.css.map",
-    "main.4e96187b.js.map": "/static/js/main.4e96187b.js.map",
+    "main.4f6e2dcd.css.map": "/static/css/main.4f6e2dcd.css.map",
+    "main.5f0ed38d.js.map": "/static/js/main.5f0ed38d.js.map",
     "453.8ab44547.chunk.js.map": "/static/js/453.8ab44547.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e4047e2b.css",
-    "static/js/main.4e96187b.js"
+    "static/css/main.4f6e2dcd.css",
+    "static/js/main.5f0ed38d.js"
   ]
 }
