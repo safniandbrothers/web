@@ -12,14 +12,14 @@ import { IoMail } from "react-icons/io5";
 
 const Footer = () => {
   return (
-    <footer className='h-fit w-full bg-blue-400 py-2mt-4'>
-      <div className='h-fit w-full max-w-[1024px] mx-auto flex flex-col md:flex-row md:justify-between px-8'>
-        <div className='w-full px-8 md:px-0 flex flex-row items-center md:text-start mx-auto gap-2'>
+    <footer className='h-fit w-full bg-blue-400 py-2 mt-4'>
+      <div className='h-fit w-full max-w-[1024px] mx-auto flex flex-col md:flex-row md:justify-between '>
+        <div className='w-full py-4 md:py-0 md:px-0 flex flex-col md:flex-row items-center md:text-start mx-auto gap-2'>
           {/* <div className=' w-full flex items-center justify-center lg:justify-start rounded-[8px] mb-4 py-8'>
             <img src={logo1} alt='' className='h-[100px] w-fit object-contain mx-auto' />
           </div>         */}
           {/* <p className='text-2xl font-bold text-white uppercase text-center lg:text-left'>ISAFNY & BROTHERS <span className='text-sm'>(PVT) Ltd</span></p> */}
-            <div className='flex flex-row gap-8 w-full items-center justify-center'>
+            <div className='flex flex-col md:flex-row md:gap-8 w-full items-center justify-center'>
               <div className='flex items-center gap-2'>
                 <FaLocationDot  className='text-white'/>
                 <p className='text-center lg:text-left text-sm text-white/75 font-medium'> 98 Broadway Road, Akkaraipattu - 01</p>

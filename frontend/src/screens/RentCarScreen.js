@@ -12,6 +12,7 @@ import {Tabs, Tab, Card, CardBody, CardHeader} from "@nextui-org/react";
 import { FaCar } from "react-icons/fa";
 import {Select, SelectItem} from "@nextui-org/react";
 import {DateRangePicker} from "@nextui-org/react";
+import {DatePicker} from "@nextui-org/react";
 
 const RentCarScreen = () => {
     let [date, setDate] = useState(parseAbsoluteToLocal("2021-04-07T18:45:22Z"));
@@ -21,7 +22,7 @@ const RentCarScreen = () => {
     <div className='h-screen min-h-fit w-full flex flex-col gap-8 bg-black pt-28 justify-center'>
         <section className='h-fit w-full '>
             <div className='h-fit w-full max-w-[1024px] mx-auto px-8'>
-                <div className='p-8 rounded-[16px]'>
+                <div className=' rounded-[16px]'>
                     <Tabs aria-label="Options" 
                         classNames={{
                             tabList: "gap-6 w-full relative rounded-none p-0 border-b border-divider px-2 rounded-[12px] py-2 mx-1 bg-gray-500",
@@ -36,67 +37,77 @@ const RentCarScreen = () => {
                                 <p>Self drive</p>
                             </div>
                         }  className='bg-transparent flex flex-col gap-4'>
-                            <Select 
-                                label="PICKUP/RETURN LOCATION" 
-                                className="max-w-md" 
-                                size='md'
-                                variant='faded'
-                                // classNames={{
-                                //     label: "group-data-[filled=true]:-translate-y-5 text-white",
-                                //     trigger: "min-h-16 bg-black hover:bg-black",
-                                //     listboxWrapper: "max-h-[400px] ",
-                                // }}
-                                // // popoverProps={{
-                                // //     classNames: {
-                                // //         base: "before:bg-black bg-black rounded-[12px]",
-                                // //         content: "p-0 border-small border-divider bg-black rounded-[12px]",
-                                // //     },
-                                // //     }}
-                            >
-                                <SelectItem key='hi' className=''>
-                                    Casons Head Office
-                                </SelectItem>
-                                <SelectItem key='hi' className=''>
-                                    BIA airport
-                                </SelectItem>
-                            </Select>
-                            <DateRangePicker label="Duration" className="max-w-md" 
-                            variant=''
-                            hideTimeZone
-                            visibleMonths={2}
-                           
-                            defaultValue={{
-                                start: parseZonedDateTime("2024-04-01T00:45[America/Los_Angeles]"),
-                                end: parseZonedDateTime("2024-04-08T11:15[America/Los_Angeles]"),
-                            }}
-                            />
-                            <Select 
-                                label="VEHICLE TYPE" 
-                                className="max-w-md" 
-                                size='md'
-                                variant='faded'
-                                // classNames={{
-                                //     label: "group-data-[filled=true]:-translate-y-5 text-white",
-                                //     trigger: "min-h-16 bg-black hover:bg-black",
-                                //     listboxWrapper: "max-h-[400px] ",
-                                // }}
-                                // // popoverProps={{
-                                // //     classNames: {
-                                // //         base: "before:bg-black bg-black rounded-[12px]",
-                                // //         content: "p-0 border-small border-divider bg-black rounded-[12px]",
-                                // //     },
-                                // //     }}
-                            >
-                                <SelectItem key='All' className=''>
-                                    All
-                                </SelectItem>
-                                <SelectItem key='Cars' className=''>
-                                    Cars
-                                </SelectItem>
-                                <SelectItem key='Vans' className=''>
-                                    Vans
-                                </SelectItem>
-                            </Select>
+                            <div className='h-fit w-full py-4 flex flex-col gap-4'>
+                                <Select 
+                                    label="PICKUP/RETURN LOCATION" 
+                                    className="w-full lg:max-w-md" 
+                                    size='md'
+                                    variant='faded'
+                                    // classNames={{
+                                    //     label: "group-data-[filled=true]:-translate-y-5 text-white",
+                                    //     trigger: "min-h-16 bg-black hover:bg-black",
+                                    //     listboxWrapper: "max-h-[400px] ",
+                                    // }}
+                                    // // popoverProps={{
+                                    // //     classNames: {
+                                    // //         base: "before:bg-black bg-black rounded-[12px]",
+                                    // //         content: "p-0 border-small border-divider bg-black rounded-[12px]",
+                                    // //     },
+                                    // //     }}
+                                >
+                                    <SelectItem key='hi' className=''>
+                                        Casons Head Office
+                                    </SelectItem>
+                                    <SelectItem key='hi' className=''>
+                                        BIA airport
+                                    </SelectItem>
+                                </Select>
+                                <div className='flex flex-col gap-4'>
+                                    <DatePicker
+                                        className="w-full lg:max-w-md" 
+                                        granularity="second"
+                                        label="Pickup Date and time"
+                                        hideTimeZone
+                                        value={date}
+                                        onChange={setDate}
+                                    />
+                                    <DatePicker
+                                        className="w-full lg:max-w-md" 
+                                        granularity="second"
+                                        label="Return Date and time"
+                                        hideTimeZone
+                                        value={date}
+                                        onChange={setDate}
+                                    />
+                                </div>
+                                <Select 
+                                    label="VEHICLE TYPE" 
+                                    className="w-full lg:max-w-md" 
+                                    size='md'
+                                    variant='faded'
+                                    // classNames={{
+                                    //     label: "group-data-[filled=true]:-translate-y-5 text-white",
+                                    //     trigger: "min-h-16 bg-black hover:bg-black",
+                                    //     listboxWrapper: "max-h-[400px] ",
+                                    // }}
+                                    // // popoverProps={{
+                                    // //     classNames: {
+                                    // //         base: "before:bg-black bg-black rounded-[12px]",
+                                    // //         content: "p-0 border-small border-divider bg-black rounded-[12px]",
+                                    // //     },
+                                    // //     }}
+                                >
+                                    <SelectItem key='All' className=''>
+                                        All
+                                    </SelectItem>
+                                    <SelectItem key='Cars' className=''>
+                                        Cars
+                                    </SelectItem>
+                                    <SelectItem key='Vans' className=''>
+                                        Vans
+                                    </SelectItem>
+                                </Select>
+                            </div>
                         </Tab>
                         <Tab key="With driver" title={
                             <div className='flex flex-row gap-2 items-center'>
@@ -106,7 +117,7 @@ const RentCarScreen = () => {
                         } className='bg-transparent flex flex-col gap-4'>
                             <Select 
                                 label="PICKUP/RETURN LOCATION" 
-                                className="max-w-md" 
+                                className="w-full lg:max-w-md" 
                                 size='md'
                                 variant='faded'
                                 // classNames={{
@@ -128,7 +139,7 @@ const RentCarScreen = () => {
                                     BIA airport
                                 </SelectItem>
                             </Select>
-                            <DateRangePicker label="Duration" className="max-w-md" 
+                            <DateRangePicker label="Duration" className="w-full lg:max-w-md" 
                             variant=''
                             hideTimeZone
                             visibleMonths={2}
@@ -140,7 +151,7 @@ const RentCarScreen = () => {
                             />
                             <Select 
                                 label="VEHICLE TYPE" 
-                                className="max-w-md" 
+                                className="w-full lg:max-w-md" 
                                 size='md'
                                 variant='faded'
                                 // classNames={{

@@ -25,13 +25,13 @@ const DistributionScreen = () => {
   return (
     <div className='h-fit w-full flex flex-col gap-14 overflow-hidden'>
         <section className='h-fit w-full relative'>
-            <div className='h-[500px] w-full absolute z-0 opacity-35'>
+            {/* <div className='h-[500px] w-full absolute z-0 opacity-35'>
                 <img src={dp} alt='' className='h-full w-full object-cover' />
-            </div>
-            <div className='h-fit w-full max-w-[1024px] mx-auto flex flex-col gap-4 px-8 relative z-30 items-start justify-center lg:justify-center pt-[400px]'>
+            </div> */}
+            <div className='h-fit min-h-[400px] w-full max-w-[1024px] mx-auto flex flex-col gap-4 px-8 relative z-30 items-center justify-center lg:justify-center '>
               <div className='h-fit w-full max-w-[600px] lg:mt-[100px] flex flex-col gap-2'>
-                <p className='text-6xl font-bold text-white'>Who we are?</p>
-                <p className='text-white/75 text-sm'>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.</p> 
+                <p className='text-6xl font-bold text-white text-center'>Who we are?</p>
+                <p className='text-white/75 text-sm text-center'>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.</p> 
               </div>      
             </div>
         </section>  
@@ -73,9 +73,9 @@ const DistributionScreen = () => {
             
           </div>
           <div className='h-fit w-full max-w-[1024px] mx-auto px-8'>
-            <div className='flex flex-col gap-1'>
-              <p className='text-2xl text-white font-bold'>Our collaborators</p>
-              <p className='text-sm text-white/25'>Lorem Ipsum is simply dummy text,</p>
+            <div className='flex flex-col gap-1 justify-center items-center'>
+              <p className='text-2xl text-center text-white font-bold'>Our collaborators</p>
+              <p className='text-sm text-center text-white/25'>Lorem Ipsum is simply dummy text,</p>
             </div>
             <div className='flex flex-col md:flex-row py-4 gap-4 h-[150px]'>
             
@@ -92,13 +92,13 @@ const DistributionScreen = () => {
             <div className='flex flex-col md:flex-row py-4 gap-4'>
               <div className='w-full lg:max-w-[400px] min-w-full lg:min-w-[400px] flex flex-col gap-4 px-6 py-8 bg-transparent backdrop-blur-md rounded-[16px] border-[2px] border-white/25'>
                     <div className='flex items-start gap-4'>
-                        <Input variant="bordered" type="email" label="Email" className='text-white' style={{
+                        <Input variant="bordered" type="email" label="Email" className='text-white max-w-md' style={{
                                 color:'white'
                             }} placeholder="Enter your email" />
                     </div>
 
                     <div className='flex items-start gap-4'>
-                        <Input variant="bordered" type="text" label="Subject" placeholder="Enter Subject" />
+                        <Input variant="bordered" type="text" label="Subject" placeholder="Enter Subject" className="max-w-md" />
                     </div>
 
                     <div className='flex items-start gap-4'>
@@ -106,7 +106,7 @@ const DistributionScreen = () => {
                       variant='bordered'
                         label="Description"
                         placeholder="Enter your description"
-                        className="max-w-xs"
+                        className="max-w-md"
                       />
                     </div>
 
