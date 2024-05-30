@@ -19,7 +19,7 @@ const Footer = () => {
             <img src={logo1} alt='' className='h-[100px] w-fit object-contain mx-auto' />
           </div>         */}
           {/* <p className='text-2xl font-bold text-white uppercase text-center lg:text-left'>ISAFNY & BROTHERS <span className='text-sm'>(PVT) Ltd</span></p> */}
-            <div className='flex flex-col md:flex-row md:gap-8 w-full items-center justify-center'>
+            <div className='flex flex-col md:flex-row gap-2 md:gap-8 w-full items-center justify-center'>
               <div className='flex items-center gap-2'>
                 <FaLocationDot  className='text-white'/>
                 <p className='text-center lg:text-left text-sm text-white/75 font-medium'> 98 Broadway Road, Akkaraipattu - 01</p>

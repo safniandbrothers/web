@@ -19,17 +19,17 @@ const RentCarScreen = () => {
     const [selected, setSelected] = React.useState("login");
 
   return (
-    <div className='h-screen min-h-fit w-full flex flex-col gap-8 bg-black pt-28 justify-center'>
-        <section className='h-fit w-full '>
-            <div className='h-fit w-full max-w-[1024px] mx-auto px-8'>
-                <div className=' rounded-[16px]'>
+    <div className='h-fit min-h-fit w-full flex flex-col gap-8  pt-24 justify-center'>
+        <section className='h-fit w-full relative'>
+            <img
+            className='h-[500px] min-h-screen absolute top-0 object-cover w-full z-0'
+                src='https://images.wondershare.com/pixcut/assets/Blog/blogimages202103/5-car-photography-tips-you-should-know-%234.jpg'
+            />
+            <div className='h-[500px] min-h-screen w-full max-w-[1024px] mx-auto px-8 flex justify-center py-4 relative z-30'>
+                <div className=' rounded-[24px] h-fit w-full max-w-[500px] mx-auto bg-white p-4'>
                     <Tabs aria-label="Options" 
-                        classNames={{
-                            tabList: "gap-6 w-full relative rounded-none p-0 border-b border-divider px-2 rounded-[12px] py-2 mx-1 bg-gray-500",
-                            cursor: "w-full group-data-[selected=true]:bg-[#181715]",
-                            tab: "py-2 px-4 rounded-[6px] ",
-                            tabContent: "group-data-[selected=true]:text-white text-black group-data-[selected=true]:bg-[#181715]"
-                        }}
+                    variant='solid' color='primary'
+                        className='px-1 w-full'
                        >
                         <Tab key="Self drive" title={
                             <div className='flex flex-row gap-2 items-center'>
@@ -40,9 +40,9 @@ const RentCarScreen = () => {
                             <div className='h-fit w-full py-4 flex flex-col gap-4'>
                                 <Select 
                                     label="PICKUP/RETURN LOCATION" 
-                                    className="w-full lg:max-w-md" 
-                                    size='md'
-                                    variant='faded'
+                                    className="w-full lg:max-w-lg" 
+                                    size='sm'
+                                    variant=''
                                     // classNames={{
                                     //     label: "group-data-[filled=true]:-translate-y-5 text-white",
                                     //     trigger: "min-h-16 bg-black hover:bg-black",
@@ -64,7 +64,7 @@ const RentCarScreen = () => {
                                 </Select>
                                 <div className='flex flex-col gap-4'>
                                     <DatePicker
-                                        className="w-full lg:max-w-md" 
+                                        className="w-full lg:max-w-lg" 
                                         granularity="second"
                                         label="Pickup Date and time"
                                         hideTimeZone
@@ -72,7 +72,7 @@ const RentCarScreen = () => {
                                         onChange={setDate}
                                     />
                                     <DatePicker
-                                        className="w-full lg:max-w-md" 
+                                        className="w-full lg:max-w-lg" 
                                         granularity="second"
                                         label="Return Date and time"
                                         hideTimeZone
@@ -82,9 +82,9 @@ const RentCarScreen = () => {
                                 </div>
                                 <Select 
                                     label="VEHICLE TYPE" 
-                                    className="w-full lg:max-w-md" 
-                                    size='md'
-                                    variant='faded'
+                                    className="w-full lg:max-w-lg" 
+                                    size='sm'
+                                    variant=''
                                     // classNames={{
                                     //     label: "group-data-[filled=true]:-translate-y-5 text-white",
                                     //     trigger: "min-h-16 bg-black hover:bg-black",
@@ -107,6 +107,9 @@ const RentCarScreen = () => {
                                         Vans
                                     </SelectItem>
                                 </Select>
+                                <Button variant='solid' color='primary' className='max-w-lg'>
+                                    Send
+                                </Button>
                             </div>
                         </Tab>
                         <Tab key="With driver" title={
@@ -118,9 +121,9 @@ const RentCarScreen = () => {
                             <div className='h-fit w-full py-4 flex flex-col gap-4'>
                                 <Select 
                                     label="PICKUP/RETURN LOCATION" 
-                                    className="w-full lg:max-w-md" 
-                                    size='md'
-                                    variant='faded'
+                                    className="w-full lg:max-w-lg" 
+                                    size='sm'
+                                    variant=''
                                     // classNames={{
                                     //     label: "group-data-[filled=true]:-translate-y-5 text-white",
                                     //     trigger: "min-h-16 bg-black hover:bg-black",
@@ -142,7 +145,7 @@ const RentCarScreen = () => {
                                 </Select>
                                 <div className='flex flex-col gap-4'>
                                     <DatePicker
-                                        className="w-full lg:max-w-md" 
+                                        className="w-full lg:max-w-lg" 
                                         granularity="second"
                                         label="Pickup Date and time"
                                         hideTimeZone
@@ -150,7 +153,7 @@ const RentCarScreen = () => {
                                         onChange={setDate}
                                     />
                                     <DatePicker
-                                        className="w-full lg:max-w-md" 
+                                        className="w-full lg:max-w-lg" 
                                         granularity="second"
                                         label="Return Date and time"
                                         hideTimeZone
@@ -160,9 +163,9 @@ const RentCarScreen = () => {
                                 </div>
                                 <Select 
                                     label="VEHICLE TYPE" 
-                                    className="w-full lg:max-w-md" 
-                                    size='md'
-                                    variant='faded'
+                                    className="w-full lg:max-w-lg" 
+                                    size='sm'
+                                    variant=''
                                     // classNames={{
                                     //     label: "group-data-[filled=true]:-translate-y-5 text-white",
                                     //     trigger: "min-h-16 bg-black hover:bg-black",
@@ -185,6 +188,9 @@ const RentCarScreen = () => {
                                         Vans
                                     </SelectItem>
                                 </Select>
+                                <Button variant='solid' color='primary' className='max-w-lg'>
+                                    Send
+                                </Button>
                             </div>
                         </Tab>
                     </Tabs>
