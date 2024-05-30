@@ -115,67 +115,77 @@ const RentCarScreen = () => {
                                 <p>With driver</p>
                             </div>
                         } className='bg-transparent flex flex-col gap-4'>
-                            <Select 
-                                label="PICKUP/RETURN LOCATION" 
-                                className="w-full lg:max-w-md" 
-                                size='md'
-                                variant='faded'
-                                // classNames={{
-                                //     label: "group-data-[filled=true]:-translate-y-5 text-white",
-                                //     trigger: "min-h-16 bg-black hover:bg-black",
-                                //     listboxWrapper: "max-h-[400px] ",
-                                // }}
-                                // // popoverProps={{
-                                // //     classNames: {
-                                // //         base: "before:bg-black bg-black rounded-[12px]",
-                                // //         content: "p-0 border-small border-divider bg-black rounded-[12px]",
-                                // //     },
-                                // //     }}
-                            >
-                                <SelectItem key='hi' className=''>
-                                    Casons Head Office
-                                </SelectItem>
-                                <SelectItem key='hi' className=''>
-                                    BIA airport
-                                </SelectItem>
-                            </Select>
-                            <DateRangePicker label="Duration" className="w-full lg:max-w-md" 
-                            variant=''
-                            hideTimeZone
-                            visibleMonths={2}
-                           
-                            defaultValue={{
-                                start: parseZonedDateTime("2024-04-01T00:45[America/Los_Angeles]"),
-                                end: parseZonedDateTime("2024-04-08T11:15[America/Los_Angeles]"),
-                            }}
-                            />
-                            <Select 
-                                label="VEHICLE TYPE" 
-                                className="w-full lg:max-w-md" 
-                                size='md'
-                                variant='faded'
-                                // classNames={{
-                                //     label: "group-data-[filled=true]:-translate-y-5 text-white",
-                                //     trigger: "min-h-16 bg-black hover:bg-black",
-                                //     listboxWrapper: "max-h-[400px] ",
-                                // }}
-                                // // popoverProps={{
-                                // //     classNames: {
-                                // //         base: "before:bg-black bg-black rounded-[12px]",
-                                // //         content: "p-0 border-small border-divider bg-black rounded-[12px]",
-                                // //     },
-                                // //     }}
-                            >
-                                <SelectItem key='All' className=''>
-                                    All
-                                </SelectItem>
-                                <SelectItem key='Cars' className=''>
-                                    Cars
-                                </SelectItem>
-                                <SelectItem key='Vans' className=''>
-                                    Vans
-                                </SelectItem>
-                            </Select>
+                            <div className='h-fit w-full py-4 flex flex-col gap-4'>
+                                <Select 
+                                    label="PICKUP/RETURN LOCATION" 
+                                    className="w-full lg:max-w-md" 
+                                    size='md'
+                                    variant='faded'
+                                    // classNames={{
+                                    //     label: "group-data-[filled=true]:-translate-y-5 text-white",
+                                    //     trigger: "min-h-16 bg-black hover:bg-black",
+                                    //     listboxWrapper: "max-h-[400px] ",
+                                    // }}
+                                    // // popoverProps={{
+                                    // //     classNames: {
+                                    // //         base: "before:bg-black bg-black rounded-[12px]",
+                                    // //         content: "p-0 border-small border-divider bg-black rounded-[12px]",
+                                    // //     },
+                                    // //     }}
+                                >
+                                    <SelectItem key='hi' className=''>
+                                        Casons Head Office
+                                    </SelectItem>
+                                    <SelectItem key='hi' className=''>
+                                        BIA airport
+                                    </SelectItem>
+                                </Select>
+                                <div className='flex flex-col gap-4'>
+                                    <DatePicker
+                                        className="w-full lg:max-w-md" 
+                                        granularity="second"
+                                        label="Pickup Date and time"
+                                        hideTimeZone
+                                        value={date}
+                                        onChange={setDate}
+                                    />
+                                    <DatePicker
+                                        className="w-full lg:max-w-md" 
+                                        granularity="second"
+                                        label="Return Date and time"
+                                        hideTimeZone
+                                        value={date}
+                                        onChange={setDate}
+                                    />
+                                </div>
+                                <Select 
+                                    label="VEHICLE TYPE" 
+                                    className="w-full lg:max-w-md" 
+                                    size='md'
+                                    variant='faded'
+                                    // classNames={{
+                                    //     label: "group-data-[filled=true]:-translate-y-5 text-white",
+                                    //     trigger: "min-h-16 bg-black hover:bg-black",
+                                    //     listboxWrapper: "max-h-[400px] ",
+                                    // }}
+                                    // // popoverProps={{
+                                    // //     classNames: {
+                                    // //         base: "before:bg-black bg-black rounded-[12px]",
+                                    // //         content: "p-0 border-small border-divider bg-black rounded-[12px]",
+                                    // //     },
+                                    // //     }}
+                                >
+                                    <SelectItem key='All' className=''>
+                                        All
+                                    </SelectItem>
+                                    <SelectItem key='Cars' className=''>
+                                        Cars
+                                    </SelectItem>
+                                    <SelectItem key='Vans' className=''>
+                                        Vans
+                                    </SelectItem>
+                                </Select>
+                            </div>
                         </Tab>
                     </Tabs>
                 </div>
