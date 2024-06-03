@@ -6,7 +6,7 @@ import { HiOutlineMail } from "react-icons/hi";
 import {now, parseAbsoluteToLocal} from "@internationalized/date";
 import {useDateFormatter} from "@react-aria/i18n";
 import {parseZonedDateTime} from "@internationalized/date";
-import dp from '../assets/dp.png'
+import dp from '../assets/dp.jpg'
 import { Link } from 'react-router-dom';
 import {Tabs, Tab, Card, CardBody, CardHeader} from "@nextui-org/react";
 
@@ -23,11 +23,11 @@ import { Pagination, FreeMode, Autoplay } from 'swiper/modules';
 const DistributionScreen = () => {
   let [date, setDate] = useState(parseAbsoluteToLocal("2021-04-07T18:45:22Z"));
   return (
-    <div className='h-fit w-full flex flex-col gap-14 overflow-hidden'>
+    <div className='dark h-fit w-full flex flex-col gap-14 overflow-hidden'>
         <section className='h-fit w-full relative'>
-            {/* <div className='h-[500px] w-full absolute z-0 opacity-35'>
+            <div className='h-[500px] w-full absolute z-0 opacity-35'>
                 <img src={dp} alt='' className='h-full w-full object-cover' />
-            </div> */}
+            </div>
             <div className='h-fit min-h-[400px] w-full max-w-[1024px] mx-auto flex flex-col gap-4 px-8 relative z-30 items-center justify-center lg:justify-center '>
               <div className='h-fit w-full max-w-[600px] lg:mt-[100px] flex flex-col gap-2'>
                 <p className='text-6xl font-bold text-white text-center'>Who we are?</p>
@@ -83,30 +83,32 @@ const DistributionScreen = () => {
           </div>
         </section> 
 
-        <section className='h-fit w-full'>
+        <section className='h-fit w-full bg-gray-900 py-16'>
           <div className='h-fit w-full max-w-[1024px] mx-auto px-8'>
             <div className='flex flex-col gap-1'>
               <p className='text-2xl text-white font-bold'>Do you want to Collaborate?</p>
               <p className='text-sm text-white/50 font-semibold'>With us,</p>
             </div>
-            <div className='flex flex-col md:flex-row py-4 gap-4'>
-              <div className='w-full lg:max-w-[400px] min-w-full lg:min-w-[400px] flex flex-col gap-4 px-6 py-8 bg-transparent backdrop-blur-md rounded-[16px] border-[2px] border-white/25'>
-                    <div className='flex items-start gap-4'>
-                        <Input variant="bordered" type="email" label="Email" className='text-white max-w-md' style={{
-                                color:'white'
-                            }} placeholder="Enter your email" />
+            <div className='w-full flex flex-col md:flex-row gap-4 mt-4'>
+              <div className='w-full flex flex-col gap-4'>
+                    <div className='w-full flex flex-col lg:flex-row gap-4'>
+                      <div className='w-full flex items-start gap-4'>
+                          <Input variant="bordered" type="email" label="Email" className='text-white ' style={{
+                                  color:'white'
+                              }} placeholder="Enter your email" />
+                      </div>
+
+                      <div className='w-full flex items-start gap-4'>
+                          <Input variant="bordered" type="text" label="Subject" placeholder="Enter Subject" className="" />
+                      </div>
                     </div>
 
-                    <div className='flex items-start gap-4'>
-                        <Input variant="bordered" type="text" label="Subject" placeholder="Enter Subject" className="max-w-md" />
-                    </div>
-
-                    <div className='flex items-start gap-4'>
+                    <div className='w-full flex items-start gap-4'>
                       <Textarea
                       variant='bordered'
                         label="Description"
                         placeholder="Enter your description"
-                        className="max-w-md"
+                        className=""
                       />
                     </div>
 

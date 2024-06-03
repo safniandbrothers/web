@@ -26,13 +26,13 @@ import { EffectFlip, Autoplay, Navigation } from 'swiper/modules';
 
 const HomeScreen = () => {
   return (
-    <div className='h-fit w-full flex flex-col relative items-center justify-center'>
-        <section className='h-screen min-h-screen w-full bg-black relative'>
-            <div className='h-[500px] w-full absolute z-0 opacity-35'>
+    <div className='h-fit w-full flex flex-col relative items-center justify-center overflow-hidden'>
+        <section className='h-screen flex items-center min-h-fit w-full bg-black relative'>
+            <div className='h-fit w-full absolute z-0 opacity-35'>
                 <img src={hbg} alt='' className='h-full w-full object-cover' />
             </div>
-            <div className='h-full w-full flex flex-col gap-8 items-center justify-center px-8 relative z-30'>
-                <div className='flex flex-col gap-2'>
+            <div className='h-fit w-full flex flex-col gap-8 items-center justify-center px-8 relative z-30'>
+                <div className='flex flex-col gap-2 -mt-[100px]'>
                     <div className='flex flex-col text-center'>
                         <p className='text-xl font-semibold text-white capitalize'>Welcome to</p>
                         <p className='text-3xl sm:text-4xl font-black text-[#4093f1] uppercase'>Safny & Brothers </p>
