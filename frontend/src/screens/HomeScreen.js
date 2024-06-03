@@ -2,7 +2,6 @@ import React from 'react'
 import hbg from '../assets/HBG.png'
 
 import GC from '../assets/GoldCoin.png'
-
 import RCG from '../assets/RentaCar.png'
 import SC from '../assets/SilverCoin.png'
 import RCS from '../assets/RentaCarSilver.png'
@@ -32,7 +31,7 @@ const HomeScreen = () => {
             <div className='h-[500px] w-full absolute z-0 opacity-35'>
                 <img src={hbg} alt='' className='h-full w-full object-cover' />
             </div>
-            <div className='h-full w-full flex flex-col gap-8 items-center justify-center  mt-[50px] px-8 relative z-30'>
+            <div className='h-full w-full flex flex-col gap-8 items-center justify-center px-8 relative z-30'>
                 <div className='flex flex-col gap-2'>
                     <div className='flex flex-col text-center'>
                         <p className='text-xl font-semibold text-white capitalize'>Welcome to</p>

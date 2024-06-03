@@ -14,20 +14,36 @@ import {Select, SelectItem} from "@nextui-org/react";
 import {DateRangePicker} from "@nextui-org/react";
 import {DatePicker} from "@nextui-org/react";
 
+import RCG from '../assets/RentaCar.png'
+import RCS from '../assets/RentaCarSilver.png'
+
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/effect-flip';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
+// import required modules
+import { EffectFlip, Autoplay, Navigation } from 'swiper/modules';
+
 const RentCarScreen = () => {
-    let [date, setDate] = useState(parseAbsoluteToLocal("2021-04-07T18:45:22Z"));
+    let [pDate, setPDate] = useState(parseAbsoluteToLocal("2021-04-07T18:45:22Z"));
+    let [rDate, setRDate] = useState(parseAbsoluteToLocal("2021-04-07T18:45:22Z"));
     const [selected, setSelected] = React.useState("login");
 
   return (
-    <div className='h-fit min-h-fit w-full flex flex-col gap-8  pt-24 justify-center'>
-        <section className='h-fit w-full relative'>
+    <div className='dark h-fit min-h-fit w-full flex flex-col gap-8 justify-center'>
+        <section className='h-fit w-full relative flex items-center'>
             <img
-            className='h-[500px] min-h-screen absolute top-0 object-cover w-full z-0'
-                src='https://images.wondershare.com/pixcut/assets/Blog/blogimages202103/5-car-photography-tips-you-should-know-%234.jpg'
+            className='h-[500px] min-h-screen absolute top-0 object-cover w-full z-0 opacity-75'
+                src={rcp}
             />
-            <div className='h-[500px] min-h-screen w-full max-w-[1024px] mx-auto px-8 flex justify-center py-4 relative z-30'>
-                <div className=' rounded-[24px] h-fit w-full max-w-[500px] mx-auto bg-white p-4'>
-                    <Tabs aria-label="Options" 
+            <div className='h-[500px] min-h-screen w-full max-w-[1024px] mx-auto px-8 flex flex-col lg:flex-row lg:justify-between py-4 relative z-30'>
+                <div className='py-6 rounded-[24px] h-fit w-fit md:min-w-[400px] max-w-[500px] mx-auto backdrop-blur-2xl p-4'>
+                    <Tabs size='lg' aria-label="Options" 
                     variant='solid' color='primary'
                         className='px-1 w-full'
                        >
@@ -37,23 +53,13 @@ const RentCarScreen = () => {
                                 <p>Self drive</p>
                             </div>
                         }  className='bg-transparent flex flex-col gap-4'>
-                            <div className='h-fit w-full py-4 flex flex-col gap-4'>
+                            <div className='h-fit w-full flex flex-col gap-4'>
                                 <Select 
                                     label="PICKUP/RETURN LOCATION" 
                                     className="w-full lg:max-w-lg" 
-                                    size='sm'
+                                    
                                     variant=''
-                                    // classNames={{
-                                    //     label: "group-data-[filled=true]:-translate-y-5 text-white",
-                                    //     trigger: "min-h-16 bg-black hover:bg-black",
-                                    //     listboxWrapper: "max-h-[400px] ",
-                                    // }}
-                                    // // popoverProps={{
-                                    // //     classNames: {
-                                    // //         base: "before:bg-black bg-black rounded-[12px]",
-                                    // //         content: "p-0 border-small border-divider bg-black rounded-[12px]",
-                                    // //     },
-                                    // //     }}
+                                    
                                 >
                                     <SelectItem key='hi' className=''>
                                         Casons Head Office
@@ -68,34 +74,24 @@ const RentCarScreen = () => {
                                         granularity="second"
                                         label="Pickup Date and time"
                                         hideTimeZone
-                                        value={date}
-                                        onChange={setDate}
+                                        value={pDate}
+                                        onChange={setPDate}
                                     />
                                     <DatePicker
                                         className="w-full lg:max-w-lg" 
                                         granularity="second"
                                         label="Return Date and time"
                                         hideTimeZone
-                                        value={date}
-                                        onChange={setDate}
+                                        value={rDate}
+                                        onChange={setRDate}
                                     />
                                 </div>
                                 <Select 
                                     label="VEHICLE TYPE" 
                                     className="w-full lg:max-w-lg" 
-                                    size='sm'
+                                    
                                     variant=''
-                                    // classNames={{
-                                    //     label: "group-data-[filled=true]:-translate-y-5 text-white",
-                                    //     trigger: "min-h-16 bg-black hover:bg-black",
-                                    //     listboxWrapper: "max-h-[400px] ",
-                                    // }}
-                                    // // popoverProps={{
-                                    // //     classNames: {
-                                    // //         base: "before:bg-black bg-black rounded-[12px]",
-                                    // //         content: "p-0 border-small border-divider bg-black rounded-[12px]",
-                                    // //     },
-                                    // //     }}
+                                    
                                 >
                                     <SelectItem key='All' className=''>
                                         All
@@ -118,23 +114,13 @@ const RentCarScreen = () => {
                                 <p>With driver</p>
                             </div>
                         } className='bg-transparent flex flex-col gap-4'>
-                            <div className='h-fit w-full py-4 flex flex-col gap-4'>
+                            <div className='h-fit w-full flex flex-col gap-4'>
                                 <Select 
                                     label="PICKUP/RETURN LOCATION" 
                                     className="w-full lg:max-w-lg" 
-                                    size='sm'
+                                    
                                     variant=''
-                                    // classNames={{
-                                    //     label: "group-data-[filled=true]:-translate-y-5 text-white",
-                                    //     trigger: "min-h-16 bg-black hover:bg-black",
-                                    //     listboxWrapper: "max-h-[400px] ",
-                                    // }}
-                                    // // popoverProps={{
-                                    // //     classNames: {
-                                    // //         base: "before:bg-black bg-black rounded-[12px]",
-                                    // //         content: "p-0 border-small border-divider bg-black rounded-[12px]",
-                                    // //     },
-                                    // //     }}
+                                    
                                 >
                                     <SelectItem key='hi' className=''>
                                         Casons Head Office
@@ -149,34 +135,24 @@ const RentCarScreen = () => {
                                         granularity="second"
                                         label="Pickup Date and time"
                                         hideTimeZone
-                                        value={date}
-                                        onChange={setDate}
+                                        value={pDate}
+                                        onChange={setPDate}
                                     />
                                     <DatePicker
                                         className="w-full lg:max-w-lg" 
                                         granularity="second"
                                         label="Return Date and time"
                                         hideTimeZone
-                                        value={date}
-                                        onChange={setDate}
+                                        value={pDate}
+                                        onChange={setRDate}
                                     />
                                 </div>
                                 <Select 
                                     label="VEHICLE TYPE" 
                                     className="w-full lg:max-w-lg" 
-                                    size='sm'
+                                    
                                     variant=''
-                                    // classNames={{
-                                    //     label: "group-data-[filled=true]:-translate-y-5 text-white",
-                                    //     trigger: "min-h-16 bg-black hover:bg-black",
-                                    //     listboxWrapper: "max-h-[400px] ",
-                                    // }}
-                                    // // popoverProps={{
-                                    // //     classNames: {
-                                    // //         base: "before:bg-black bg-black rounded-[12px]",
-                                    // //         content: "p-0 border-small border-divider bg-black rounded-[12px]",
-                                    // //     },
-                                    // //     }}
+                                    
                                 >
                                     <SelectItem key='All' className=''>
                                         All

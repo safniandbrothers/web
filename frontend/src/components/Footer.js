@@ -12,7 +12,7 @@ import { IoMail } from "react-icons/io5";
 
 const Footer = () => {
   return (
-    <footer className='h-fit w-full bg-blue-400 py-2 mt-4'>
+    <footer className='h-fit w-full bg-black py-2 mt-4'>
       <div className='h-fit w-full max-w-[1024px] mx-auto flex flex-col md:flex-row md:justify-between '>
         <div className='w-full py-4 md:py-0 md:px-0 flex flex-col md:flex-row items-center md:text-start mx-auto gap-2'>
           {/* <div className=' w-full flex items-center justify-center lg:justify-start rounded-[8px] mb-4 py-8'>
