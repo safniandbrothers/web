@@ -12,14 +12,12 @@ import dp from '../assets/dp.jpg'
 import { Link } from 'react-router-dom';
 import {Tabs, Tab, Card, CardBody, CardHeader} from "@nextui-org/react";
 import axios from 'axios'
-import logo1 from '../assets/logo2.png'
+import logo1 from '../assets/logo1.png'
 import c1 from '../assets/c1.png'
 import c2 from '../assets/c2.png'
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-
-
 
 // Import Swiper styles
 import 'swiper/css';
@@ -84,8 +82,8 @@ const DistributionScreen = () => {
 
         <section className='h-fit w-full relative'>
           <div className='absolute bottom-0 h-[150px] w-full py-4 flex flex-col gap-4 justify-center'>
-            {/* <Swiper
-              slidesPerView={'4'}
+            <Swiper
+              slidesPerView={'1'}
               spaceBetween={20}
               freeMode={true}
               loop={true}
@@ -102,7 +100,7 @@ const DistributionScreen = () => {
               <SwiperSlide className='h-[100px] w-fit' >
                 <img src={c2} alt='' className='h-full w-full object-contain' />
               </SwiperSlide>
-            </Swiper> */}
+            </Swiper>
             
           </div>
           <div className='h-fit w-full max-w-[1024px] mx-auto px-8'>
@@ -110,13 +108,8 @@ const DistributionScreen = () => {
               <p className='text-2xl text-center text-white font-bold'>Our collaborators</p>
               <p className='text-sm text-center text-white/25'></p>
             </div>
-            <div className='w-full justify-center flex-col md:flex-row py-4 gap-16 h-fit flex flex-wrap'>
-              <div className='h-[150px] w-fit flex items-center' >
-                <img src={c1} alt='' className='h-full w-full object-contain' />
-              </div>
-              <div className='h-[150px] w-fit flex items-center' >
-                <img src={c2} alt='' className='h-full w-full object-contain' />
-              </div>
+            <div className='w-full justify-center flex-col md:flex-row py-4 gap-16 h-[150px] flex flex-wrap'>
+            
             </div>
           </div>
         </section> 
