@@ -25,18 +25,18 @@ const DistributionScreen = () => {
   return (
     <div className='dark h-fit w-full flex flex-col gap-14 overflow-hidden'>
         <section className='h-fit w-full relative'>
-            <div className='h-[500px] w-full absolute z-0 opacity-35'>
+            <div className='h-[500px] w-full absolute z-0 opacity-25'>
                 <img src={dp} alt='' className='h-full w-full object-cover' />
             </div>
             <div className='h-fit min-h-[400px] w-full max-w-[1024px] mx-auto flex flex-col gap-4 px-8 relative z-30 items-center justify-center lg:justify-center '>
               <div className='h-fit w-full max-w-[600px] lg:mt-[100px] flex flex-col gap-2'>
                 <p className='text-6xl font-bold text-white text-center'>Who we are?</p>
-                <p className='text-white/75 text-sm text-center'>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.</p> 
+                <p className='text-white/75 text-base text-center'>A leading distributor of Consumer Packaged Goods (CPGs) serving Organized Retail, General Trade, and Online Retail channels exclusively in Eastern Province (Ampara and Batticaloa)</p> 
               </div>      
             </div>
         </section>  
 
-        <section className='h-fit w-full relative'>
+        {/* <section className='h-fit w-full relative'>
           <div className='absolute bottom-0 h-[150px] w-full py-4 flex flex-col gap-4'>
             <Swiper
               slidesPerView={'4'}
@@ -81,66 +81,75 @@ const DistributionScreen = () => {
             
             </div>
           </div>
-        </section> 
+        </section>  */}
 
         <section className='h-fit w-full bg-gray-900 py-16'>
           <div className='h-fit w-full max-w-[1024px] mx-auto px-8'>
-            <div className='flex flex-col gap-1'>
-              <p className='text-2xl text-white font-bold'>Do you want to Collaborate?</p>
-              <p className='text-sm text-white/50 font-semibold'>With us,</p>
-            </div>
-            <div className='w-full flex flex-col md:flex-row gap-4 mt-4'>
-              <div className='w-full flex flex-col gap-4'>
-                    <div className='w-full flex flex-col lg:flex-row gap-4'>
-                      <div className='w-full flex items-start gap-4'>
-                          <Input variant="bordered" type="email" label="Email" className='text-white ' style={{
-                                  color:'white'
-                              }} placeholder="Enter your email" />
-                      </div>
+            <div className='flex flex-col md:flex-row gap-16'>
+              <div className='md:min-w-[500px] '>
+                <div className='flex flex-col gap-1'>
+                  <p className='text-3xl text-white font-bold'>Do you want to Collaborate?</p>
+                  <p className='text-sm text-white/50 font-semibold'>With us,</p>
+                </div>
+                <div className='w-full flex flex-col md:flex-row mt-4 gap-16'>
+                  <div className='w-full flex flex-col gap-4'>
+                        <div className='w-full flex items-start gap-4'>
+                            <Input variant="bordered" type="email" label="Email" className='text-white ' style={{
+                                    color:'white'
+                                }} placeholder="Enter your email" />
+                        </div>
 
-                      <div className='w-full flex items-start gap-4'>
-                          <Input variant="bordered" type="text" label="Subject" placeholder="Enter Subject" className="" />
-                      </div>
+                        <div className='w-full flex items-start gap-4'>
+                            <Input variant="bordered" type="text" label="Subject" placeholder="Enter Subject" className="" />
+                        </div>
+
+                        <div className='w-full flex items-start gap-4'>
+                          <Textarea
+                          variant='bordered'
+                            label="Description"
+                            placeholder="Enter your description"
+                            className=""
+                          />
+                        </div>
+
+                        <Link to={'/rent-car'}>
+                            <Button variant='bordered' className='h-fit w-fit capitalize border-[2px] font-medium border-[#4093f1] bg-[#4093f1] text-xs md:text-sm text-white px-5 py-3 rounded-full'>
+                                Submit
+                            </Button>
+                        </Link>
+                        
                     </div>
-
-                    <div className='w-full flex items-start gap-4'>
-                      <Textarea
-                      variant='bordered'
-                        label="Description"
-                        placeholder="Enter your description"
-                        className=""
-                      />
-                    </div>
-
-                    <Link to={'/rent-car'}>
-                        <Button variant='bordered' className='h-fit w-fit capitalize border-[2px] font-medium border-[#4093f1] bg-[#4093f1] text-xs md:text-sm text-white px-5 py-3 rounded-full'>
-                            Submit
-                        </Button>
-                    </Link>
-                    
+                  
+                </div>
+              </div>
+              <div className='flex flex-col gap-8'>
+                  <p className='text-white text-sm  lg:text-xl'>
+                  We would like to become the exclusive distributor for your goods and services company in Ampara and Batticaloa.
+                  </p>
+                  <p className='text-xs lg:text-sm text-white/50 '>Feel free to contact us at 0777926383.</p>
                 </div>
             </div>
           </div>
+          
         </section> 
 
         <section className='h-fit w-full'>
-          <div className='h-fit w-full max-w-[1024px] mx-auto px-8'>
+          <div className='h-fit w-full max-w-[1024px] mx-auto px-8 py-8'>
             <div className='flex flex-col gap-1'>
-              <p className='text-2xl text-white font-bold'>Our Services</p>
-              <p className='text-sm text-white/25'>Lorem Ipsum is simply dummy text,</p>
+              <p className='text-2xl text-white font-bold'>Our Facilities</p>
             </div>
             <div className='flex flex-col md:flex-row py-4 gap-4'>
               <div className='h-fit w-full py-4 px-4 border-[1px] gap-2 border-white/25 rounded-[12px] flex flex-col '>
-                <p className='text-lg font-medium text-white'>Service 1</p>
-                <p className='text-white/50 text-sm'>In publishing and graphic design, Lorem ipsum is a placeholder text</p>
+                <p className='text-base font-semibold text-white'>Warehousing and Storage: Inventory Management and Storage Solutions </p>
+                <p className='text-white/50 text-sm'>Facilitating Warehouse and storage solutions for inventory management and ideal storage facilities.</p>
               </div>
               <div className='h-fit w-full py-4 px-4 border-[1px] gap-2 border-white/25 rounded-[12px] flex flex-col '>
-                <p className='text-lg font-medium text-white'>Service 2</p>
-                <p className='text-white/50 text-sm'>In publishing and graphic design, Lorem ipsum is a placeholder text</p>
+                <p className='text-base font-semibold text-white'>Transportation and Logistics: Freight Management and Route Optimization</p>
+                <p className='text-white/50 text-sm'>Facilitating transportation and logistics for freight management and route optimization.</p>
               </div>
               <div className='h-fit w-full py-4 px-4 border-[1px] gap-2 border-white/25 rounded-[12px] flex flex-col '>
-                <p className='text-lg font-medium text-white'>Service 3</p>
-                <p className='text-white/50 text-sm'>In publishing and graphic design, Lorem ipsum is a placeholder text</p>
+                <p className='text-base font-semibold text-white'>Customer Relationship Management (CRM): Order Processing and Customer Service</p>
+                <p className='text-white/50 text-sm'>Available Customer Relationship Management for efficient order processing and various customer services.</p>
               </div>
             </div>
           </div>
