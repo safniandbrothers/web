@@ -81,7 +81,7 @@ const DistributionScreen = () => {
         </section>  
 
         <section className='h-fit w-full relative'>
-          <div className='absolute bottom-0 h-[150px] w-full py-4 flex flex-col gap-4 justify-center'>
+          <div className='absolute bottom-0 h-[250px] w-full py-4 flex flex-col gap-4 justify-center'>
             <Swiper
               slidesPerView={'1'}
               spaceBetween={20}
@@ -94,10 +94,10 @@ const DistributionScreen = () => {
             }}
               className=' w-full'
             >
-              <SwiperSlide className='h-[100px] w-fit flex items-center' >
+              <SwiperSlide className='h-[200px] w-fit flex items-center' >
                 <img src={c1} alt='' className='h-full w-full object-contain' />
               </SwiperSlide>
-              <SwiperSlide className='h-[100px] w-fit' >
+              <SwiperSlide className='h-[150px] w-fit' >
                 <img src={c2} alt='' className='h-full w-full object-contain' />
               </SwiperSlide>
             </Swiper>
@@ -108,7 +108,7 @@ const DistributionScreen = () => {
               <p className='text-2xl text-center text-white font-bold'>Our collaborators</p>
               <p className='text-sm text-center text-white/25'></p>
             </div>
-            <div className='w-full justify-center flex-col md:flex-row py-4 gap-16 h-[150px] flex flex-wrap'>             
+            <div className='w-full justify-center flex-col md:flex-row py-4 gap-16 h-[250px] flex flex-wrap'>             
             </div>
           </div>
         </section> 
