@@ -1,25 +1,27 @@
 {
   "files": {
-    "main.css": "/static/css/main.443aa287.css",
-    "main.js": "/static/js/main.81e0ce2d.js",
+    "main.css": "/static/css/main.88c693ac.css",
+    "main.js": "/static/js/main.96e58681.js",
     "static/js/453.8ab44547.chunk.js": "/static/js/453.8ab44547.chunk.js",
     "static/media/HBG.png": "/static/media/HBG.5cba3f61e56ab5d37cc2.png",
     "static/media/rcp.png": "/static/media/rcp.eb46aa98a893070762c7.png",
+    "static/media/c1.png": "/static/media/c1.e608dd0ce72ce780aae2.png",
     "static/media/dp.jpg": "/static/media/dp.0d7bcf14c38fcf3f01d1.jpg",
     "static/media/RentaCar.png": "/static/media/RentaCar.acb5dfcb1b2a1df5aea8.png",
     "static/media/GoldCoin.png": "/static/media/GoldCoin.a8b1cfdd45aa97dd07ab.png",
     "static/media/RentaCarSilver.png": "/static/media/RentaCarSilver.8f710dc0ea122ec9f6c0.png",
     "static/media/SilverCoin.png": "/static/media/SilverCoin.83627f5149be6664b06b.png",
+    "static/media/c2.png": "/static/media/c2.5935d3703602fe83d1f6.png",
     "static/media/logo1.png": "/static/media/logo1.d01269c4f40c10ba5050.png",
     "static/media/logo2.png": "/static/media/logo2.64264416c763b141d220.png",
     "static/media/logo.png": "/static/media/logo.cb0006539b5f41efba22.png",
     "index.html": "/index.html",
-    "main.443aa287.css.map": "/static/css/main.443aa287.css.map",
-    "main.81e0ce2d.js.map": "/static/js/main.81e0ce2d.js.map",
+    "main.88c693ac.css.map": "/static/css/main.88c693ac.css.map",
+    "main.96e58681.js.map": "/static/js/main.96e58681.js.map",
     "453.8ab44547.chunk.js.map": "/static/js/453.8ab44547.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.443aa287.css",
-    "static/js/main.81e0ce2d.js"
+    "static/css/main.88c693ac.css",
+    "static/js/main.96e58681.js"
   ]
 }

@@ -12,8 +12,14 @@ import dp from '../assets/dp.jpg'
 import { Link } from 'react-router-dom';
 import {Tabs, Tab, Card, CardBody, CardHeader} from "@nextui-org/react";
 import axios from 'axios'
+import logo1 from '../assets/logo2.png'
+import c1 from '../assets/c1.png'
+import c2 from '../assets/c2.png'
+
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
+
+
 
 // Import Swiper styles
 import 'swiper/css';
@@ -64,20 +70,21 @@ const DistributionScreen = () => {
   return (
     <div className='dark h-fit w-full flex flex-col gap-14 overflow-hidden'>
         <section className='h-fit w-full relative'>
-            <div className='h-[500px] w-full absolute z-0 opacity-25'>
+            <div className='h-[400px] w-full absolute z-0 opacity-25'>
                 <img src={dp} alt='' className='h-full w-full object-cover' />
             </div>
             <div className='h-fit min-h-[400px] w-full max-w-[1024px] mx-auto flex flex-col gap-4 px-8 relative z-30 items-center justify-center lg:justify-center '>
               <div className='h-fit w-full max-w-[600px] lg:mt-[100px] flex flex-col gap-2'>
-                <p className='text-6xl font-bold text-white text-center'>Who we are?</p>
+                <img src={logo1} alt='' className='h-12 object-contain'/>
+                <p className='text-6xl font-bold text-white text-center mt-4'>Who we are?</p>
                 <p className='text-white/75 text-base text-center'>A leading distributor of Consumer Packaged Goods (CPGs) serving Organized Retail, General Trade, and Online Retail channels exclusively in Eastern Province (Ampara and Batticaloa)</p> 
               </div>      
             </div>
         </section>  
 
-        {/* <section className='h-fit w-full relative'>
-          <div className='absolute bottom-0 h-[150px] w-full py-4 flex flex-col gap-4'>
-            <Swiper
+        <section className='h-fit w-full relative'>
+          <div className='absolute bottom-0 h-[150px] w-full py-4 flex flex-col gap-4 justify-center'>
+            {/* <Swiper
               slidesPerView={'4'}
               spaceBetween={20}
               freeMode={true}
@@ -90,41 +97,33 @@ const DistributionScreen = () => {
               className=' w-full'
             >
               <SwiperSlide className='h-[100px] w-fit flex items-center' >
-                <img src='https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8ed3d547-94ff-48e1-9f20-8c14a7030a02_2000x2000.jpeg' alt='' className='h-full w-full object-contain' />
+                <img src={c1} alt='' className='h-full w-full object-contain' />
               </SwiperSlide>
               <SwiperSlide className='h-[100px] w-fit' >
-                <img src='https://images.ctfassets.net/y2ske730sjqp/5QQ9SVIdc1tmkqrtFnG9U1/de758bba0f65dcc1c6bc1f31f161003d/BrandAssets_Logos_02-NSymbol.jpg?w=940' alt='' className='h-full w-full object-contain' />
+                <img src={c2} alt='' className='h-full w-full object-contain' />
               </SwiperSlide>
-              <SwiperSlide className='h-[100px] w-fit' >
-                <img src='https://i.pinimg.com/originals/74/79/a0/7479a0a02cf333e01e13d1b6d08af800.jpg' alt='' className='h-full w-full object-contain' />
-              </SwiperSlide>
-              <SwiperSlide className='h-[100px] w-fit' >
-                <img src='https://wallpapercave.com/wp/wp2860517.jpg' alt='' className='h-full w-full object-contain' />
-              </SwiperSlide>
-              <SwiperSlide className='h-[100px] w-fit' >
-                <img src='https://seekvectors.com/files/download/Amazon-Logo-31.jpg' alt='' className='h-full w-full object-contain' />
-              </SwiperSlide>
-              <SwiperSlide className='h-[100px] w-fit' >
-                <img src='https://i.pinimg.com/564x/0e/9b/1e/0e9b1e7319dae4b8046c5366d62532e3.jpg' alt='' className='h-full w-full object-contain' />
-              </SwiperSlide>
-
-            </Swiper>
+            </Swiper> */}
             
           </div>
           <div className='h-fit w-full max-w-[1024px] mx-auto px-8'>
             <div className='flex flex-col gap-1 justify-center items-center'>
               <p className='text-2xl text-center text-white font-bold'>Our collaborators</p>
-              <p className='text-sm text-center text-white/25'>Lorem Ipsum is simply dummy text,</p>
+              <p className='text-sm text-center text-white/25'></p>
             </div>
-            <div className='flex flex-col md:flex-row py-4 gap-4 h-[150px]'>
-            
+            <div className='w-full justify-center flex-col md:flex-row py-4 gap-16 h-fit flex flex-wrap'>
+              <div className='h-[150px] w-fit flex items-center' >
+                <img src={c1} alt='' className='h-full w-full object-contain' />
+              </div>
+              <div className='h-[150px] w-fit flex items-center' >
+                <img src={c2} alt='' className='h-full w-full object-contain' />
+              </div>
             </div>
           </div>
-        </section>  */}
+        </section> 
 
         <section className='h-fit w-full bg-gray-900 py-16'>
           <div className='h-fit w-full max-w-[1024px] mx-auto px-8'>
-            <div className='flex flex-col md:flex-row gap-16'>
+            <div className='flex flex-col md:flex-row md:items-center gap-16'>
               <div className='md:min-w-[500px] '>
                 <div className='flex flex-col gap-1'>
                   <p className='text-3xl text-white font-bold'>Inquiries</p>
@@ -169,10 +168,10 @@ const DistributionScreen = () => {
                 </div>
               </div>
               <div className='flex flex-col gap-8'>
-                  <p className='text-white text-sm  lg:text-xl'>
+                  <p className='text-white text-sm  lg:text-xl text-center'>
                   We would like to become the exclusive distributor for your goods and services company in Ampara and Batticaloa.
                   </p>
-                  <p className='text-xs lg:text-sm text-white/50 '>Feel free to contact us at 0777926383.</p>
+                  <p className='text-xs lg:text-sm text-white/50 text-center'>Feel free to contact us at 0777926383.</p>
                 </div>
             </div>
           </div>
