@@ -1,4 +1,8 @@
-import React from 'react'
+import React, { useRef } from 'react'
+import emailjs from '@emailjs/browser';
+
+import ReactWhatsapp from 'react-whatsapp';
+
 import hbg from '../assets/HBG.png'
 
 import GC from '../assets/GoldCoin.png'
@@ -25,6 +29,8 @@ import { EffectFlip, Autoplay, Navigation } from 'swiper/modules';
 
 
 const HomeScreen = () => {
+
+    
   return (
     <div className='h-fit w-full flex flex-col relative items-center justify-center overflow-hidden'>
         <section className='h-screen flex items-center min-h-fit w-full bg-black relative'>
@@ -90,11 +96,15 @@ const HomeScreen = () => {
                         <IoLogoFacebook className='text-white text-2xl' />
                         <p className='text-white capitalize'>facebook</p>
                     </Button>
-                    <Button className='border-[2px] border-white/50' variant='bordered'>
-                        <IoLogoWhatsapp className='text-white text-2xl' />
-                        <p className='text-white capitalize'>WatsApp</p>
-                    </Button>
-                    
+
+                    <ReactWhatsapp number="+94777926383" message="Hello World!!!" >
+                        <div className='relative -z-20'>
+                            <Button className='border-[2px] border-white/50' variant='bordered'>
+                                <IoLogoWhatsapp className='text-white text-2xl' />
+                                <p className='text-white capitalize'>Whatsapp</p>
+                            </Button>
+                        </div>
+                    </ReactWhatsapp>
                 </div>
             </div>
         </section>

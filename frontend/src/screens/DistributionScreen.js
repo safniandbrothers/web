@@ -1,6 +1,8 @@
 import { Button, DateInput, Input, Textarea } from '@nextui-org/react'
 import { color, transform } from 'framer-motion';
 import React, { useState } from 'react'
+import { useRef } from 'react'
+import emailjs from '@emailjs/browser';
 import { IoLocationSharp } from "react-icons/io5";
 import { HiOutlineMail } from "react-icons/hi";
 import {now, parseAbsoluteToLocal} from "@internationalized/date";
@@ -9,7 +11,7 @@ import {parseZonedDateTime} from "@internationalized/date";
 import dp from '../assets/dp.jpg'
 import { Link } from 'react-router-dom';
 import {Tabs, Tab, Card, CardBody, CardHeader} from "@nextui-org/react";
-
+import axios from 'axios'
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -21,7 +23,44 @@ import 'swiper/css/pagination';
 import { Pagination, FreeMode, Autoplay } from 'swiper/modules';
 
 const DistributionScreen = () => {
-  let [date, setDate] = useState(parseAbsoluteToLocal("2021-04-07T18:45:22Z"));
+    const [email, setEmail] = useState('')
+    const [number, setNumber] = useState('')
+    const [subject, setSubject] = useState('')
+    const [description, setDescription] = useState('')
+    
+    const form = useRef();
+
+    const sendEmail = (e) => {
+      e.preventDefault();
+
+
+    // Create a new object that contains dynamic template params
+    const templateParams = {
+      from_name: number,
+      from_email: email,
+      to_name: 'SAFNY & BROTHERS (PVT) Ltd',
+      message: description,
+    };
+
+    // Your EmailJS service ID, template ID, and Public Key
+    const serviceId = 'service_xyfno1i';
+    const templateId = 'template_nahy6bg';
+    const publicKey = 'GziQZGOytK6C8SlEM';
+  
+      emailjs.send(serviceId, templateId, templateParams, publicKey)
+        .then(
+          () => {
+            setNumber('');
+            setSubject('');
+            setEmail('');
+            setDescription('');
+          },
+          (error) => {
+            alert('FAILED...', error.text);
+          },
+        );
+    };
+
   return (
     <div className='dark h-fit w-full flex flex-col gap-14 overflow-hidden'>
         <section className='h-fit w-full relative'>
@@ -88,37 +127,44 @@ const DistributionScreen = () => {
             <div className='flex flex-col md:flex-row gap-16'>
               <div className='md:min-w-[500px] '>
                 <div className='flex flex-col gap-1'>
-                  <p className='text-3xl text-white font-bold'>Do you want to Collaborate?</p>
+                  <p className='text-3xl text-white font-bold'>Inquiries</p>
                   <p className='text-sm text-white/50 font-semibold'>With us,</p>
                 </div>
                 <div className='w-full flex flex-col md:flex-row mt-4 gap-16'>
-                  <div className='w-full flex flex-col gap-4'>
+                  <form ref={form} onSubmit={sendEmail} className='w-full flex flex-col gap-4'>
                         <div className='w-full flex items-start gap-4'>
-                            <Input variant="bordered" type="email" label="Email" className='text-white ' style={{
+                            <Input variant="bordered" type="email" value={email} onChange={(e) => setEmail(e.target.value)} label="Email" className='text-white ' style={{
                                     color:'white'
                                 }} placeholder="Enter your email" />
                         </div>
 
                         <div className='w-full flex items-start gap-4'>
-                            <Input variant="bordered" type="text" label="Subject" placeholder="Enter Subject" className="" />
+                            <Input variant="bordered" type="number" value={number} onChange={(e) => setNumber(e.target.value)} label="Mobile number" className='text-white ' style={{
+                                    color:'white'
+                                }} placeholder="Enter your mobile number" />
+                        </div>
+
+                        <div className='w-full flex items-start gap-4'>
+                            <Input variant="bordered" type="text" value={subject} onChange={(e) => setSubject(e.target.value)} label="Subject" className='text-white ' placeholder="Enter Subject" />
                         </div>
 
                         <div className='w-full flex items-start gap-4'>
                           <Textarea
-                          variant='bordered'
+                            value={description} 
+                            className='text-white '
+                            onChange={(e) => setDescription(e.target.value)}
+                            variant='bordered'
                             label="Description"
                             placeholder="Enter your description"
-                            className=""
                           />
                         </div>
 
-                        <Link to={'/rent-car'}>
-                            <Button variant='bordered' className='h-fit w-fit capitalize border-[2px] font-medium border-[#4093f1] bg-[#4093f1] text-xs md:text-sm text-white px-5 py-3 rounded-full'>
-                                Submit
-                            </Button>
-                        </Link>
+                 
+                        <Button type="submit" variant='bordered' className='h-fit w-fit capitalize border-[2px] font-medium border-[#4093f1] bg-[#4093f1] text-xs md:text-sm text-white px-5 py-3 rounded-full'>
+                            Submit
+                        </Button>
                         
-                    </div>
+                    </form>
                   
                 </div>
               </div>
