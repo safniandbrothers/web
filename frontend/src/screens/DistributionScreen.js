@@ -108,8 +108,7 @@ const DistributionScreen = () => {
               <p className='text-2xl text-center text-white font-bold'>Our collaborators</p>
               <p className='text-sm text-center text-white/25'></p>
             </div>
-            <div className='w-full justify-center flex-col md:flex-row py-4 gap-16 h-[150px] flex flex-wrap'>
-            
+            <div className='w-full justify-center flex-col md:flex-row py-4 gap-16 h-[150px] flex flex-wrap'>             
             </div>
           </div>
         </section> 
